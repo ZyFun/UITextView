@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,47 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UITextView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71J-eQ-Zrw">
+                                <rect key="frame" x="20" y="55" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-it-Ka3">
+                                <rect key="frame" x="20" y="93" width="374" height="658"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Финансовая драма о противостоянии двух крупных волков с Уолл-стрит в безупречном исполнении обладателей «Эмми» Пола Джаматти и Дэмиена Льюиса. В самом центре мировых финансов и власти принципиальный и проницательный федеральный прокурор Чак Родс вступает в опасное столкновение с талантливым и амбициозным королем хедж-фондов Бобби Аксельродом. Но не стоит ждать классической борьбы добра со злом, все гораздо сложнее и интереснее. За глубину, динамику и жесткий юмор отвечают шоураннеры Брайан Коппельман, Дэвид Левин, вместе работавшие над проектами «Тринадцать друзей Оушена», «Иллюзионист» и «Шулера», и Эндрю Росс Соркин, один из ведущих американских экономических журналистов, финансовый колумнист «New York Times». Бонус шоу – на помощь двум первоклассным актерам призвали контрастных по всем параметрам Мэгги Сифф («Безумцы») и Малин Акерман («Девушка моих кошмаров»).Финансовая драма о противостоянии двух крупных волков с Уолл-стрит в безупречном исполнении обладателей «Эмми» Пола Джаматти и Дэмиена Льюиса. В самом центре мировых финансов и власти принципиальный и проницательный федеральный прокурор Чак Родс вступает в опасное столкновение с талантливым и амбициозным королем хедж-фондов Бобби Аксельродом. Но не стоит ждать классической борьбы добра со злом, все гораздо сложнее и интереснее. За глубину, динамику и жесткий юмор отвечают шоураннеры Брайан Коппельман, Дэвид Левин, вместе работавшие над проектами «Тринадцать друзей Оушена», «Иллюзионист» и «Шулера», и Эндрю Росс Соркин, один из ведущих американских экономических журналистов, финансовый колумнист «New York Times». Бонус шоу – на помощь двум первоклассным актерам призвали контрастных по всем параметрам Мэгги Сифф («Безумцы») и Малин Акерман («Девушка моих кошмаров»).</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gIt-it-Ka3" firstAttribute="top" secondItem="71J-eQ-Zrw" secondAttribute="bottom" constant="17" id="7Zs-gI-cQs"/>
+                            <constraint firstItem="gIt-it-Ka3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Hu2-Xv-Yh7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="71J-eQ-Zrw" secondAttribute="trailing" constant="383" id="QE6-uY-aP2"/>
+                            <constraint firstItem="71J-eQ-Zrw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wku-Kt-B6L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gIt-it-Ka3" secondAttribute="trailing" constant="20" id="Y4J-4s-R9L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gIt-it-Ka3" secondAttribute="bottom" constant="111" id="qa8-8w-CHU"/>
+                            <constraint firstItem="71J-eQ-Zrw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="tpd-ND-UeA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="countLabel" destination="71J-eQ-Zrw" id="Mtx-Py-hsp"/>
+                        <outlet property="textView" destination="gIt-it-Ka3" id="l8D-Fb-fle"/>
+                        <outlet property="textViewBottomConstraint" destination="qa8-8w-CHU" id="uIE-I2-aGI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
         </scene>
     </scenes>
 </document>
