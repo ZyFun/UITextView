@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stepper: UIStepper!
     
     
     override func viewDidLoad() {
@@ -30,6 +31,14 @@ class ViewController: UIViewController {
         textView.backgroundColor = view.backgroundColor
         // Скругляем углы текстового поля
         textView.layer.cornerRadius = 10
+        
+        // Кастомизируем stepper
+        stepper.value = 17
+        stepper.minimumValue = 10
+        stepper.maximumValue = 25
+        stepper.tintColor = .white
+        stepper.backgroundColor = .gray
+        stepper.layer.cornerRadius = 10
         
         // Поднимаем или опускаем текст, в зависимости от активации и деактивации клавиатуры (0)
         // Наблюдатель за появлением клавиатуры
@@ -61,6 +70,13 @@ class ViewController: UIViewController {
         
         // Определяем зону видимости скроллинга
         textView.scrollRangeToVisible(textView.selectedRange)
+    }
+    @IBAction func sizeFont(_ sender: UIStepper) {
+        
+        let font = textView.font?.fontName
+        let fontSize = CGFloat(sender.value)
+        
+        textView.font = UIFont(name: font!, size: fontSize)
     }
 }
 

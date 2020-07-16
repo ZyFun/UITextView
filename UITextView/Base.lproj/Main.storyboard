@@ -29,6 +29,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XBT-wI-p4N">
+                                <rect key="frame" x="300" y="49" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="7YD-2r-DLu"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -37,13 +43,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="71J-eQ-Zrw" secondAttribute="trailing" constant="383" id="QE6-uY-aP2"/>
                             <constraint firstItem="71J-eQ-Zrw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wku-Kt-B6L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gIt-it-Ka3" secondAttribute="trailing" constant="20" id="Y4J-4s-R9L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XBT-wI-p4N" secondAttribute="trailing" constant="20" id="dFd-uR-Ujt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gIt-it-Ka3" secondAttribute="bottom" constant="111" id="qa8-8w-CHU"/>
                             <constraint firstItem="71J-eQ-Zrw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="tpd-ND-UeA"/>
+                            <constraint firstItem="XBT-wI-p4N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="xGJ-v9-NkI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="71J-eQ-Zrw" id="Mtx-Py-hsp"/>
+                        <outlet property="stepper" destination="XBT-wI-p4N" id="qX0-kL-Cd0"/>
                         <outlet property="textView" destination="gIt-it-Ka3" id="l8D-Fb-fle"/>
                         <outlet property="textViewBottomConstraint" destination="qa8-8w-CHU" id="uIE-I2-aGI"/>
                     </connections>
