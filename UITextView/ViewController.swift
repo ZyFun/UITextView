@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     
     override func viewDidLoad() {
@@ -23,10 +24,10 @@ class ViewController: UIViewController {
         //назначсем делегата, для функцианирования методов из расширения
         textView.delegate = self
         
-        // Настраиваем прозрачность для индикатора активности
+        // Настраиваем прозрачность текста при активном индикатора активности
         textView.isHidden = true
-        // Устанавливаем прозрачность текста
-        textView.alpha = 0
+//        // Устанавливаем прозрачность текста
+//        textView.alpha = 0
         
         // Кастомизируем view
         view.backgroundColor = .systemGreen
@@ -53,6 +54,8 @@ class ViewController: UIViewController {
         // Деактивация интерфейса
         self.view.isUserInteractionEnabled = false
         
+        progressView.setProgress(0, animated: true)
+        
         // Поднимаем или опускаем текст, в зависимости от активации и деактивации клавиатуры (0)
         // Наблюдатель за появлением клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -60,14 +63,27 @@ class ViewController: UIViewController {
         // Наблюдатель за скрытием клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        // Логика анимации индикатора активности
-        UIView.animate(withDuration: 0, delay: 3, options: .curveLinear, animations: {
-            self.textView.alpha = 1
-        }) { (finished) in
-            self.activityIndicator.stopAnimating()
-            self.textView.isHidden = false
-            // Активация интерфейса
-            self.view.isUserInteractionEnabled = true
+//        // Логика анимации индикатора активности
+//        UIView.animate(withDuration: 0, delay: 3, options: .curveLinear, animations: {
+//            self.textView.alpha = 1
+//        }) { (finished) in
+//            self.activityIndicator.stopAnimating()
+//            self.textView.isHidden = false
+//            // Активация интерфейса
+//            self.view.isUserInteractionEnabled = true
+//        }
+        
+        // Таймер для заполнения индикатора прогресса
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if self.progressView.progress != 1 {
+                self.progressView.progress += 0.2
+            } else {
+                self.activityIndicator.stopAnimating()
+                self.textView.isHidden = false
+                // Активация интерфейса
+                self.view.isUserInteractionEnabled = true
+                self.progressView.isHidden = true
+            }
         }
         
     }

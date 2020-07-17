@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71J-eQ-Zrw">
-                                <rect key="frame" x="20" y="55" width="11" height="21"/>
+                                <rect key="frame" x="20" y="55" width="11" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-it-Ka3">
-                                <rect key="frame" x="20" y="93" width="374" height="658"/>
+                                <rect key="frame" x="20" y="92.5" width="374" height="658.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Финансовая драма о противостоянии двух крупных волков с Уолл-стрит в безупречном исполнении обладателей «Эмми» Пола Джаматти и Дэмиена Льюиса. В самом центре мировых финансов и власти принципиальный и проницательный федеральный прокурор Чак Родс вступает в опасное столкновение с талантливым и амбициозным королем хедж-фондов Бобби Аксельродом. Но не стоит ждать классической борьбы добра со злом, все гораздо сложнее и интереснее. За глубину, динамику и жесткий юмор отвечают шоураннеры Брайан Коппельман, Дэвид Левин, вместе работавшие над проектами «Тринадцать друзей Оушена», «Иллюзионист» и «Шулера», и Эндрю Росс Соркин, один из ведущих американских экономических журналистов, финансовый колумнист «New York Times». Бонус шоу – на помощь двум первоклассным актерам призвали контрастных по всем параметрам Мэгги Сифф («Безумцы») и Малин Акерман («Девушка моих кошмаров»).Финансовая драма о противостоянии двух крупных волков с Уолл-стрит в безупречном исполнении обладателей «Эмми» Пола Джаматти и Дэмиена Льюиса. В самом центре мировых финансов и власти принципиальный и проницательный федеральный прокурор Чак Родс вступает в опасное столкновение с талантливым и амбициозным королем хедж-фондов Бобби Аксельродом. Но не стоит ждать классической борьбы добра со злом, все гораздо сложнее и интереснее. За глубину, динамику и жесткий юмор отвечают шоураннеры Брайан Коппельман, Дэвид Левин, вместе работавшие над проектами «Тринадцать друзей Оушена», «Иллюзионист» и «Шулера», и Эндрю Росс Соркин, один из ведущих американских экономических журналистов, финансовый колумнист «New York Times». Бонус шоу – на помощь двум первоклассным актерам призвали контрастных по всем параметрам Мэгги Сифф («Безумцы») и Малин Акерман («Девушка моих кошмаров»).</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -38,6 +38,9 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Wr8-a9-IUu">
                                 <rect key="frame" x="197" y="412" width="20" height="20"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Ev-ghY">
+                                <rect key="frame" x="20" y="92.5" width="374" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -46,18 +49,22 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="71J-eQ-Zrw" secondAttribute="trailing" constant="383" id="QE6-uY-aP2"/>
                             <constraint firstItem="71J-eQ-Zrw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wku-Kt-B6L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gIt-it-Ka3" secondAttribute="trailing" constant="20" id="Y4J-4s-R9L"/>
+                            <constraint firstItem="Szh-Ev-ghY" firstAttribute="top" secondItem="gIt-it-Ka3" secondAttribute="top" id="bgd-Gx-mBk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XBT-wI-p4N" secondAttribute="trailing" constant="20" id="dFd-uR-Ujt"/>
                             <constraint firstItem="Wr8-a9-IUu" firstAttribute="centerY" secondItem="gIt-it-Ka3" secondAttribute="centerY" id="hST-B0-kiM"/>
+                            <constraint firstItem="Szh-Ev-ghY" firstAttribute="width" secondItem="gIt-it-Ka3" secondAttribute="width" id="jc8-2b-5AX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gIt-it-Ka3" secondAttribute="bottom" constant="111" id="qa8-8w-CHU"/>
                             <constraint firstItem="71J-eQ-Zrw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="tpd-ND-UeA"/>
                             <constraint firstItem="XBT-wI-p4N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="xGJ-v9-NkI"/>
                             <constraint firstItem="Wr8-a9-IUu" firstAttribute="centerX" secondItem="gIt-it-Ka3" secondAttribute="centerX" id="xxe-xS-FeQ"/>
+                            <constraint firstItem="Szh-Ev-ghY" firstAttribute="centerX" secondItem="gIt-it-Ka3" secondAttribute="centerX" id="zwx-6q-wvf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Wr8-a9-IUu" id="0Xn-dd-cqd"/>
                         <outlet property="countLabel" destination="71J-eQ-Zrw" id="Mtx-Py-hsp"/>
+                        <outlet property="progressView" destination="Szh-Ev-ghY" id="7WD-03-J6m"/>
                         <outlet property="stepper" destination="XBT-wI-p4N" id="qX0-kL-Cd0"/>
                         <outlet property="textView" destination="gIt-it-Ka3" id="l8D-Fb-fle"/>
                         <outlet property="textViewBottomConstraint" destination="qa8-8w-CHU" id="uIE-I2-aGI"/>
