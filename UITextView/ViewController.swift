@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
@@ -22,11 +23,16 @@ class ViewController: UIViewController {
         //назначсем делегата, для функцианирования методов из расширения
         textView.delegate = self
         
+        // Настраиваем прозрачность для индикатора активности
+        textView.isHidden = true
+        // Устанавливаем прозрачность текста
+        textView.alpha = 0
+        
         // Кастомизируем view
         view.backgroundColor = .systemGreen
         
         // Кастомизируем textView
-        textView.text = nil
+        //textView.text = nil
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         textView.backgroundColor = view.backgroundColor
         // Скругляем углы текстового поля
@@ -40,12 +46,29 @@ class ViewController: UIViewController {
         stepper.backgroundColor = .gray
         stepper.layer.cornerRadius = 10
         
+        // Индикатор исчезнет по окончанию его действия
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = #colorLiteral(red: 0.4233732877, green: 0.4787296661, blue: 1, alpha: 1)
+        activityIndicator.startAnimating()
+        // Деактивация интерфейса
+        self.view.isUserInteractionEnabled = false
+        
         // Поднимаем или опускаем текст, в зависимости от активации и деактивации клавиатуры (0)
         // Наблюдатель за появлением клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         // Наблюдатель за скрытием клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // Логика анимации индикатора активности
+        UIView.animate(withDuration: 0, delay: 3, options: .curveLinear, animations: {
+            self.textView.alpha = 1
+        }) { (finished) in
+            self.activityIndicator.stopAnimating()
+            self.textView.isHidden = false
+            // Активация интерфейса
+            self.view.isUserInteractionEnabled = true
+        }
         
     }
     
@@ -96,7 +119,7 @@ extension ViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         countLabel.text = "\(textView.text.count)"
         // Ограничиваем количество вводимых символов
-        return textView.text.count + (text.count - range.length) <= 60
+        return true //textView.text.count + (text.count - range.length) <= 60
     }
 }
 
